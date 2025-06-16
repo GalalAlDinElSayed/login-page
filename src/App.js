@@ -1,29 +1,33 @@
+import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Login from "./components/Login";
-import Signup from "./components/Signup";
-import Dashboard from "./components/Dashboard";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
+import Dashboard from "./pages/Dashboard";
+import Profile from "./pages/Profile";
 import PrivateRoute from "./components/PrivateRoute";
-import ForgotPassword from "./components/ForgotPassword";
-import Profile from "./components/Profile";
-
+import "./i18n"; // للتأكد إن i18n شغال
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Login />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/forgot" element={<ForgotPassword />} />
         <Route
           path="/dashboard"
           element={
             <PrivateRoute>
               <Dashboard />
             </PrivateRoute>
-            <Profile />
-            
           }
-          
+        />
+        <Route
+          path="/profile"
+          element={
+            <PrivateRoute>
+              <Profile />
+            </PrivateRoute>
+          }
         />
       </Routes>
     </Router>

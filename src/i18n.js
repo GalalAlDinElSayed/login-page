@@ -1,32 +1,20 @@
-import i18n from "i18next";
-import { initReactI18next } from "react-i18next";
-import LanguageDetector from "i18next-browser-languagedetector";
+import i18n from 'i18next';
+import { initReactI18next } from 'react-i18next';
+import LanguageDetector from 'i18next-browser-languagedetector';
 
 const resources = {
   en: {
     translation: {
-      welcome: "Welcome to Dashboard",
+      welcome: "Welcome",
       login: "Login",
-      signup: "Sign Up",
-      email: "Email",
-      password: "Password",
-      remember: "Remember Me",
       logout: "Logout",
-      dashboard: "Dashboard",
-      switchLang: "عربي",
     },
   },
   ar: {
     translation: {
-      welcome: "مرحبًا بك في لوحة التحكم",
+      welcome: "مرحبًا",
       login: "تسجيل الدخول",
-      signup: "إنشاء حساب",
-      email: "البريد الإلكتروني",
-      password: "كلمة المرور",
-      remember: "حفظ تسجيل الدخول",
       logout: "تسجيل الخروج",
-      dashboard: "لوحة التحكم",
-      switchLang: "English",
     },
   },
 };
@@ -36,7 +24,7 @@ i18n
   .use(initReactI18next)
   .init({
     resources,
-    fallbackLng: "ar",
+    fallbackLng: 'en',
     interpolation: {
       escapeValue: false,
     },
